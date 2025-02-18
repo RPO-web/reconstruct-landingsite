@@ -1,13 +1,11 @@
 <script lang="ts">
     import "../app.css";
     let { children } = $props();
-    import ThemeSwitch from "$lib/components/ui/ThemeSwitch.svelte";
 </script>
 
 <div
     class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-primary-50 to-white p-6"
 >
-    <div><ThemeSwitch /></div>
     <div
         class="max-w-2xl w-full bg-white rounded-xl shadow-sm p-8 border border-primary-100"
     >
