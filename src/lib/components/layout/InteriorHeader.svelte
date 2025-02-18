@@ -9,7 +9,7 @@
             <a href="/" class="text-2xl font-bold text-surface-900-50">
                 Logo
             </a>
-
+            <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center space-x-8">
                 {#each navigationLinks as link}
                     <a
@@ -20,7 +20,7 @@
                     </a>
                 {/each}
             </div>
-
+            <!-- Mobile Menu Button -->
             <button
                 type="button"
                 class="md:hidden text-surface-900-50"
@@ -45,27 +45,18 @@
                 </svg>
             </button>
         </nav>
-
+        <!-- Mobile Menu -->
         {#if isMenuOpen}
-            <div id="mobile-menu" class="md:hidden">
-                <a
-                    href="/services"
-                    class="block text-surface-700-200 hover:text-primary-500 transition-colors"
-                >
-                    Services
-                </a>
-                <a
-                    href="/company"
-                    class="block text-surface-700-200 hover:text-primary-500 transition-colors"
-                >
-                    About
-                </a>
-                <a
-                    href="/careers"
-                    class="block text-surface-700-200 hover:text-primary-500 transition-colors"
-                >
-                    Careers
-                </a>
+            <div id="mobile-menu" class="md:hidden mt-4 space-y-4">
+                {#each navigationLinks as link}
+                    <a
+                        href={link.href}
+                        class="block text-surface-700-200 hover:text-primary-500 transition-colors"
+                    >
+                        {link.title}
+                    </a>
+                {/each}
+                <!-- Contact Button -->
                 <a
                     href="/contact"
                     class="block px-4 py-2 bg-primary-500 text-surface-50-950 rounded-lg hover:bg-primary-600 transition-colors text-center"
