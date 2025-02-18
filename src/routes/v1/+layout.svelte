@@ -2,7 +2,6 @@
     import "../../app.css";
     import Footer from "$lib/components/layout/GlobalFooter.svelte";
     import Header from "$lib/components/layout/HomeHeader.svelte";
-    export const prerender = true;
     let { children } = $props();
 </script>
 
