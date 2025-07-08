@@ -93,48 +93,4 @@
             </div>
         </div>
     </section>
-
-    <!-- Process Section -->
-    <section>
-        <div class="text-center mb-12">
-            <div
-                class="inline-block mb-6 px-4 py-1 bg-secondary-100 dark:bg-secondary-900/30 rounded-full"
-            >
-                <span
-                    class="text-secondary-600 dark:text-secondary-400 font-medium"
-                    >Our Process</span
-                >
-            </div>
-            <h2 class="text-3xl font-bold text-surface-900-50">
-                How We <span class="text-secondary-500">Deliver</span>
-            </h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {#each service?.process || [] as step}
-                <div class="group relative">
-                    <div
-                        class="absolute -inset-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg opacity-20 group-hover:opacity-100 transition-opacity"
-                    ></div>
-                    <div
-                        class="relative bg-surface-50-900 p-6 rounded-lg border border-surface-200-700"
-                    >
-                        <div class="flex items-center gap-4 mb-4">
-                            <div
-                                class="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center text-surface-50 font-bold"
-                            >
-                                {step.step}
-                            </div>
-                            <h3
-                                class="text-xl font-semibold text-surface-900-50"
-                            >
-                                {step.title}
-                            </h3>
-                        </div>
-                        <p class="text-surface-700-200">{step.description}</p>
-                    </div>
-                </div>
-            {/each}
-        </div>
-    </section>
 </div>

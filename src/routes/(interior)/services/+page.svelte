@@ -6,7 +6,7 @@
     {#each services as service}
         <a
             href="/services/{service.slug}"
-            class="group bg-surface hover:bg-primary-50 transition-all duration-300 p-6 rounded-lg shadow-md hover:shadow-lg block"
+            class="group bg-surface-50 dark:bg-surface-900 hover:bg-surface-100 dark:hover:bg-surface-800 transition-all duration-300 p-6 rounded-lg shadow-md hover:shadow-lg block border border-surface-200 dark:border-surface-700"
         >
             <div class="overflow-hidden rounded-lg mb-4">
                 <img
@@ -15,13 +15,13 @@
                     class="w-full h-48 object-cover transform transition-transform duration-300 group-hover:scale-105"
                 />
             </div>
-            <h3 class="text-2xl font-semibold text-primary-700 mb-2">
+            <h3 class="text-2xl font-semibold text-primary-700 dark:text-primary-400 mb-2">
                 {service.title}
             </h3>
-            <p class="text-surface-700-200 mb-4">
+            <p class="text-surface-700 dark:text-surface-200 mb-4">
                 {service.description}
             </p>
-            <div class="flex items-center text-primary-600 font-medium">
+            <div class="flex items-center text-primary-600 dark:text-primary-400 font-medium">
                 <span>Learn More</span>
                 <svg
                     class="w-5 h-5 ml-2 transform transition-transform group-hover:translate-x-1"

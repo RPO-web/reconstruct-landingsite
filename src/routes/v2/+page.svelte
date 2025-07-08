@@ -34,6 +34,18 @@
     </div>
 </section>
 
+<script lang="ts">
+    import { services } from "$lib/data/services";
+    
+    // Create short summaries for homepage navigation
+    const serviceSummaries: { [key: string]: string } = {
+        "manufactured-housing-installation": "Turnkey manufactured home installations with complete site prep and utility hookups.",
+        "general-contracting": "Licensed general contracting for residential and light commercial projects.",
+        "accessory-structures": "Custom sheds, garages, awnings, carports, and ADUs for your property.",
+        "land-development-infrastructure": "Complete land development from raw land to shovel-ready lots."
+    };
+</script>
+
 <!-- Services Section -->
 <section class="py-24 bg-surface-50-900">
     <div class="container mx-auto px-4">
@@ -50,12 +62,12 @@
             </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {#each Array(4) as _, i}
+            {#each services as service}
                 <div class="group relative overflow-hidden rounded-xl">
                     <div class="relative" aria-hidden="true">
                         <img
-                            src={`/demo/service-${i + 1}.jpg`}
-                            alt="Professional service background"
+                            src={service.image}
+                            alt={service.title}
                             class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div
@@ -64,14 +76,13 @@
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 p-6">
                         <h3 class="text-2xl font-semibold text-surface-50 mb-2">
-                            Service {i + 1}
+                            {service.title}
                         </h3>
                         <p class="text-surface-200 mb-4 opacity-90">
-                            Description for Service {i + 1}. Add your service
-                            description here.
+                            {serviceSummaries[service.slug]}
                         </p>
                         <a
-                            href={`/services#service-${i + 1}`}
+                            href={`/services/${service.slug}`}
                             class="inline-flex items-center text-primary-400 hover:text-primary-300 font-medium group-hover:gap-2 transition-all"
                         >
                             Learn more
